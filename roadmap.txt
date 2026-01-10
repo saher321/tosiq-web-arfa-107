@@ -1,0 +1,30 @@
+
+6 month, 2.5 month
+--------------
+HTML, CSS, BOOTSTRAP, JS, REACTJS
+
+2 month
+php, laravel
+XAMPP
+
+2 month
+Mern stack with nextjs
+MongoDB Compass
+-----
+Domain / Hosting
+github - vercel app ---> live uploading
+
+git-github -> version control
+ATS resume
+Portfolio
+Linkedin - account -> profile
+Fiverr - account
+
+dribbble
+behance
+
+
+
+
+
+
