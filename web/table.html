@@ -1,67 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <title>Search</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Table tag</h1>
+<body class="h-screen flex flex-col items-center justify-center bg-white">
 
-    <table border="1" cellspacing="0" cellpadding="10">
-        <tr>
-            <td>1</td>
-            <td colspan="2" rowspan="2">2</td>
-        </tr>
-        <tr>
-            <td rowspan="2">4</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>9</td>
-        </tr>
-    </table>
+  <!-- Fixed Google Logo -->
+  <h1 class="text-6xl font-semibold mb-10">
+    <span class="text-blue-500">G</span>
+    <span class="text-red-500">o</span>
+    <span class="text-yellow-500">o</span>
+    <span class="text-blue-500">g</span>
+    <span class="text-green-500">l</span>
+    <span class="text-red-500">e</span>
+  </h1>
 
-    <hr />
-    <table border="1" cellspacing="0" cellpadding="10">
-        <tr>
-            <td rowspan="2">1</td>
-            <td>2</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td colspan="2">8</td>
-        </tr>
-    </table>
+  <!-- NON-RESPONSIVE Search Box (Fixed Width) -->
+  <div style="width:600px;">
+    <div class="flex items-center border border-gray-300 rounded-full px-4 py-3 shadow">
+      <input
+        type="text"
+        placeholder="Search Google or type a URL"
+        class="w-full outline-none text-gray-700"
+      />
+    </div>
+  </div>
 
-    <hr />
+  <!-- Fixed Buttons -->
+  <div class="flex gap-4 mt-8">
+    <button class="bg-gray-100 text-sm px-4 py-2 rounded">
+      Google Search
+    </button>
+    <button class="bg-gray-100 text-sm px-4 py-2 rounded">
+      I'm Feeling Lucky
+    </button>
+  </div>
 
-    <table border="1" cellspacing="0" cellpadding="10">
-        <thead>
-            <tr>
-                <th>SR#</th>
-                <th>Name</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Asad</td>
-                <td>asad@gmail.com</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Usama</td>
-                <td>usama@gmail.com</td>
-            </tr>
-        </tbody>
-    </table>
+  <!-- Note -->
+  <p class="text-xs text-gray-400 mt-10">
+    ❌ This page is intentionally NOT responsive
+  </p>
 
 </body>
 </html>
