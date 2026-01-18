@@ -1,0 +1,26 @@
+:root {
+    --box-bg: #ccc;
+    --box-bg-gr: linear-gradient(162deg,rgba(93, 196, 252, 0.83) 0%, rgba(203, 203, 247, 0.93) 49%, rgba(170, 133, 230, 0.9) 100%);
+    --box-rd: 20px;
+}
+/* *********** */
+div {
+    margin: 20px;
+}
+/* *********** */
+
+.box1{
+    background: var(--box-bg-gr);
+    padding: 8px;
+    border-radius: var(--box-rd);
+}
+.box2{
+    background-color: var(--box-bg);
+    padding: 8px;
+    border-radius: var(--box-rd);
+}
+.box3{
+    background-color: var(--box-bg);
+    padding: 8px;
+    border-radius: var(--box-rd);
+}
