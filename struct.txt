@@ -1,0 +1,27 @@
+xyz.com                     => folder
+    - assets                => folder
+        -- css              => folder
+            * style.css
+            * variables.css
+        -- js               => folder
+            * cript.js
+            * scroll.js
+        -- images           => folder
+            * image1.png
+        -- videos           => folder
+            * video1.mp4
+        -- audios           => folder
+            * audio1.mp3
+    - pages -> optional     => folder
+            -- home.html
+            -- about.html
+    home.html
+    about.html
+    help.html
+    contact.html
+    terms-and-policy.html
+    ________________________
+
+    nameing convention
+    camelCase
+    snake_case
