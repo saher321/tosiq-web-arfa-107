@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        label {
+            display: block;
+        }
+        input, select{
+            outline: none;
+            background-color: #ececec;
+            border: 1px solid #999;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <form>
+        <div>
+            <label> Full name </label>
+            <input type="text" placeholder="Enter your name">
+        </div>
+        <div>&nbsp;</div>
+        <div>
+            <label> Email </label>
+            <input type="email" placeholder="Enter your email">
+        </div>
+        <div>&nbsp;</div>
+        <div>
+            <label> Student image </label>
+            <input type="file" accept=".pdf, .docx">
+        </div>
+        <div>&nbsp;</div>
+        <div>
+            <label> Select course </label>
+            <select>
+                <option>--- Select course ---</option>
+                <option>MIT</option>
+                <option>BSCS</option>
+                <option>MBA</option>
+            </select>
+        </div>
+        <div>&nbsp;</div>
+        <div>
+            <label>Address</label>
+            <textarea rows="5" cols="30" placeholder="Provide current home address"></textarea>
+        </div>
+
+    </form>
+    
+</body>
+</html>
