@@ -1,0 +1,35 @@
+:root{
+    --bg-clr: #ddd;
+    --txt-clr: purple;
+    --inner-space: 8px;
+    --border-clr: purple;
+    --br: 50px; 
+
+    --primary-color: red;
+    --secondary-color: tomato;
+
+    --light-gray: #f1f1f1;
+    --dark-gray: #333;
+
+    --w: fit-content;
+}
+
+h1{
+    background-color: var(--bg-clr);
+    color: var(--txt-clr);
+    padding: var(--inner-space);
+    border-left: 2px solid var(--border-clr);
+    border-top-left-radius: var(--br);
+    border-bottom-right-radius: var(--br);
+    width: var(--w);
+}
+
+h2{
+    background-color: var(--bg-clr);
+    color: var(--txt-clr);
+    padding: var(--inner-space);
+    border-left: 2px solid var(--border-clr);
+    border-bottom-right-radius: var(--br);
+    border-top-left-radius: var(--br);
+    width: var(--w);
+}
