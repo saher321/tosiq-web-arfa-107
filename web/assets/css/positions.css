@@ -1,0 +1,32 @@
+.parent {
+    background-color: #ccc;
+    width: 500px;
+    height: 250px;
+    padding: 8px;
+
+    position: relative;
+
+    nav {
+        a{
+            display: block;
+            margin-bottom: 8px
+        }
+    }
+}
+
+.child {
+
+    position: absolute;
+    bottom: 0;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%; */
+
+}
+
+.calling{
+    position: fixed;
+    right: 8px;
+    bottom: 8px;
+}
