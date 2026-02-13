@@ -1,0 +1,26 @@
+.parent, .child{
+    padding: 4px; 
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px #ccc;
+}
+.parent{
+    background-color: #ddd;
+    width: 600px;
+    height: 300px;
+    position: relative;
+}
+
+.child{
+    background-color: yellowgreen;
+    width: 80px;
+    height: 80px;
+
+    position: absolute;
+    top: 50%; left:50%;
+    translate: -50% -50%;
+}
+.setting-icons{
+    position: absolute;
+    top: 50%; left: 4px;
+    translate: -50% -50%;    
+}
