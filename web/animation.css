@@ -1,0 +1,31 @@
+
+body{
+    position: relative;
+}
+.sec1, .sec2, .sec3{
+    height: 90vh;
+    width: 100%;
+}
+section:nth-child(odd){
+    background-color: #ddd;
+}
+.box1{
+    position: fixed;
+    top: 30px;
+    height: 80px;
+    width: 80px;
+    background-color: red;
+
+    /* animation name */
+    animation: slide 3s infinite;
+}
+
+@keyframes slide {
+  0%   {
+        margin-left: 0px;
+    }
+  100% {
+        margin-left: 100px;
+        background-color: yellow;
+    }
+}

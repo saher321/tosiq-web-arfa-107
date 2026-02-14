@@ -1,0 +1,25 @@
+body{
+    background-color: #333
+}
+
+.loading{
+    height: 40px;
+    width: 40px;
+
+    border-radius: 50px;
+    border-top: 5px dotted red;
+    border-right: 5px dotted red;
+    border-bottom: 5px dotted #ccc;
+    border-left: 5px dotted #ccc;
+
+    animation: loader 5s infinite linear;
+}
+
+@keyframes loader {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
