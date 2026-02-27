@@ -24,6 +24,11 @@ console.log("Expression result is ", result);
 function cToF(){
     var c = document.getElementById("cel").value;
 
+    if (!c) {
+        alert("Please add celsius value");
+        return;
+    }
+
     var result = parseInt(c) * 9/5 + 32;
     // console.log("Temp in °F ", result);
     
