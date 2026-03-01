@@ -1,3 +1,7 @@
+function showProduct(category){
+    console.log(category)
+}
+
 // ********* COMPARISON OPERATOR ********
 // < :: less then
 // > :: greater then
@@ -23,7 +27,7 @@
 
 var clrs = document.getElementById("colors");
 const products = [
-  { id: 1, name: "iPhone 15", price: 999, category: "Electronics" },
+  { id: 1, name: "iPhone 15", isStitched: true, price: 999, category: "Electronics" },
   { id: 2, name: "Samsung Galaxy S24", price: 899, category: "Electronics" },
   { id: 3, name: "Nike Air Max 270", price: 150, category: "Footwear" },
   { id: 4, name: "Adidas Ultraboost 22", price: 180, category: "Footwear" },
