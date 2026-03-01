@@ -1,6 +1,4 @@
-function showProduct(category){
-    console.log(category)
-}
+
 
 // ********* COMPARISON OPERATOR ********
 // < :: less then
@@ -38,6 +36,10 @@ const products = [
   { id: 9, name: "HP Envy 6055e Printer", price: 149, category: "Office" },
   { id: 10, name: "Canon EOS R50 Camera", price: 679, category: "Photography" }
 ];
+function showProduct(category){
+    const filteredProducts = products.filter((elem) => elem.category == category);
+    console.log(filteredProducts)
+}
 
 let category = "Footwear";
 // const filteredProducts = products.filter((elem) => elem.category == category);
