@@ -1,7 +1,9 @@
 // component
 // props
+// features
 // children
 // state
+// condition rendering
 // library / pkg => icons, axios, react-hot-toast
 // cmd => npm create vite@latest, npm run dev, npm install
 
