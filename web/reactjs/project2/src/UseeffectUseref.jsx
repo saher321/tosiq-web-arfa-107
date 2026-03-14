@@ -5,6 +5,7 @@ import axios from 'axios'
 const UseeffectUseref = () => {
   const [recipes, setRecipes] = useState([])
   const [data, setData] = useState(12)
+  const [isLoading, setIsLoading] = useState(false)
 
   let value1 = useRef(null)
   let value2 = useRef(null)
@@ -27,15 +28,18 @@ const UseeffectUseref = () => {
   
   const getRecipes = async () => {
     try {
+      setIsLoading(true)
       const response = await axios.get("https://dummyjson.com/recipes")
       if (response.data && response.data.recipes){
         setRecipes(response.data.recipes)
+        setIsLoading(false)
+        // setRecipes([])
       }
     } catch (error) {
+      setIsLoading(false)
       console.log("ERR: ", error)
     }
   }
-  
   
   useEffect(()=>{
     getRecipes()
@@ -45,7 +49,7 @@ const UseeffectUseref = () => {
 
   return (
     <div>
-      <h1>Data is {data}</h1>
+      <h1>Data is {data} - {recipes.length}</h1>
       <input ref={value1} type="text" placeholder="Enter value" />
       <input ref={value2} type="text" placeholder="Enter value" />
 
@@ -53,14 +57,20 @@ const UseeffectUseref = () => {
       <hr />
       {/* recipes data */}
 
-      <ol>
-        { recipes.map((recipe) => {
-          return (
-            <li>{recipe.name}</li>
-          )
-        })
-        }
-      </ol>
+      {
+        isLoading ? "Loading..." :
+        
+        recipes.length > 0 ? 
+        <ol>
+          { recipes.map((recipe, i) => {
+            return (
+              <li key={i}>{recipe.name}</li>
+            )
+          })
+          }
+        </ol> :
+        <div>No records were found!</div>
+      }
 
     </div>
   )
