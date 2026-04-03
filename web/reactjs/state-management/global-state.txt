@@ -1,0 +1,31 @@
+State Management
+
+1 - useState
+
+1 - Context api
+2 - Redux toolkit
+3 - zustand
+
+
+useState()
+    - props drilling
+    data name = Tosiq
+    file a 
+        name = Tosiq
+
+    file b
+        name = Tosiq
+
+    file y 
+        name = Tosiq
+
+    file x
+        Tosiq
+
+other states (context, redux toolkit, zustand)
+    file -> warehouse: Alex :: multiple item, collection
+
+    file a => warehouse = Alex
+    file z => warehouse = Alex
+    file c => warehouse = Alex
+    file x => warehouse = Alex
