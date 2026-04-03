@@ -1,0 +1,33 @@
+How to use
+
+1. MERN STACK
+    Nodejs = https://nodejs.org/en/download
+    Mongodb compass = https://www.mongodb.com/try/download/community
+    
+2. PHP/LARAVEL
+    Composer = https://getcomposer.org/download/
+    Xampp = https://www.apachefriends.org/download.html
+
+Mern stack (MVC)
+
+Frontend
+R = Reactjs     => Ui interfaces
+
+1 - Backend
+M = Mongodb     => collections > documents
+E = Expressjs   => URLS / apis
+N = Nodejs      => functions/variables with db
+
+2 - PHP - Laravel :: API/URLS
+
+Php = backend/programming language
+Laravel = MVC => MC => Model, Controller
+
+Eloquent Model = Model => database schema > user :: id, name, email
+
+databases
+
+1. Mongodb :: Non-Relational DB
+    - collections(users, students, departments) > documents
+2. MySQL :: Relational
+    - Tables(users, students, departments) > Rows,Columns
