@@ -9,6 +9,9 @@
     # basic programming (ifelse, loops, arrays)
     # Restful apis (mysql => xampp)
     # oop
+
+
+    # $assignment = $a + $b - ($a * $b) / $c
 ?>
 
 <!-- # Laravel
