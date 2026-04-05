@@ -33,5 +33,5 @@ if ( $a == 10 && $b > 5) {
     } else {                    // when conditions will be false
         echo "Lower";
     }
-    // assignment find positive or negative
+    // assignment find positive or negative number
  ?>
