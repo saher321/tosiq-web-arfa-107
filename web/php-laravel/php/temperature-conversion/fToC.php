@@ -1,7 +1,12 @@
 <?php
 if (isset($_GET['sb_btn'])){
     $fa = $_GET['fa'];
-    $c = ($fa - 32) * 5/9;
+
+    if ($fa == "" || !$fa){
+        $error = "Form field is required";
+    } else {
+        $c = ($fa - 32) * 5/9;
+    }
 }
 ?>
 
@@ -11,17 +16,32 @@ if (isset($_GET['sb_btn'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        small{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <form action="" method="GET">
         <table border="1" cellspacing="0" cellpadding="20">
             <tr>
-                <td colspan="2"><h3>F to C conversion</h3></td>
+                <td colspan="2">
+                    <h3>F to C conversion</h3>
+                    <small>
+                        <?php
+                            if (isset($error)){
+                                echo $error;
+                            }
+                        ?>
+                    </small>
+                </td>
             </tr>
             <tr>
                 <td>Fah Value:</td>
                 <td>
-                    <input name="fa" Value="<?php echo $_GET['fa']??0?>" type="text" placeholder="Enter value">
+                    <input name="fa" value="<?php if (isset($_GET['fa'])) echo $_GET['fa'] ?>" type="text" placeholder="Enter value">
                 </td>
             </tr>
             <tr>
