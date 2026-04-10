@@ -25,7 +25,7 @@ if ( $a == 10 && $b > 5) {
  -->
  <?php
 
-    $b = "10"
+    $b = "10";
     $a = true;
 
     if ($a >= 10){              // when conditions will be true
