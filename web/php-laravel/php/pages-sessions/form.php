@@ -27,3 +27,12 @@ if(isset($_POST['sbmt_btn'])){
     </div>
 </body>
 </html>
+<!-- 
+departments
+    roll_no, pk
+    name
+    hod_name
+    status
+    created_at
+    updated_at
+-->
