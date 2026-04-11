@@ -37,8 +37,11 @@ $sum = 1;
     <h2>Loops</h2>
     <select>
         <?php
-        for($i = 0; $i < count($colors); $i++){
-            echo "<option>". $colors[$i] . "</option>";
+        // for($i = 0; $i < count($colors); $i++){
+        //     echo "<option>". $colors[$i] . "</option>";
+        // }
+        foreach($colors as $clr){
+            echo "<option>". $clr . "</option>";
         }
         ?>
     </select>
