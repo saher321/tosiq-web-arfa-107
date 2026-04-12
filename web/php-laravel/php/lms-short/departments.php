@@ -18,7 +18,14 @@
 </head>
 <body>
     <h3>Departments</h3>
-
+    <form action="./scripts/dep_create.php" method="post">
+        <input type="text" placeholder="Enter department name" name="dep_name">
+        <select name="status" id="">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+        </select>
+        <button>Save department</button>
+    </form>
     <table border="1" cellspacing="0" cellpadding="20">
         <thead>
             <tr>
