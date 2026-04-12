@@ -43,7 +43,8 @@
                     <?php echo $dept['status']?>
                 </td>
                 <td>
-                    Edit / Delete
+                    Edit / 
+                    <a href="./scripts/dep_del.php?id=<?php echo $dept['id']?>">Delete</a>
                 </td>
             </tr>
             <?php }?>
