@@ -119,8 +119,7 @@ $departments = mysqli_query($conn, $query);
 <script>
     function handleDelete(id){
         if(!confirm("Are you sure your want to delete this?")) return;
-        window.location.href = "./scripts/dep_del.php?id=" + id
-        // console.log("Data deleted")
+        window.location.href = "./scripts/dep_del.php?id=" + id;
     }
 </script>
 
