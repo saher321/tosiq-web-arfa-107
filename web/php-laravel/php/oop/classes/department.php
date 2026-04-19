@@ -4,7 +4,12 @@
 
     function get_departments() {
         $sts = "select * from departments";
-        return $db->query($sts);
+        return $this->query($sts);
+    }
+
+    function delete($id) {
+        $sts = "delete from departments where id = $id";
+        return $this->query($sts);
     }
     
  }

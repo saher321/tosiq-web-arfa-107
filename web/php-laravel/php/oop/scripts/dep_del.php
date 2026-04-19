@@ -1,16 +1,16 @@
 <?php
 
-    include "../config/db.php";
+    include "../classes/db.php";
+    include "../classes/department.php";
 
     $id = $_GET['id'];
     
-    if ($id < 0) return json_encode([
+    if ($id <= 0) return json_encode([
         "status" => false,
         "message"=> "Department id is not valid"
     ]);
 
-    $query = "delete from departments where id=$id";
-    $response = mysqli_query($conn, $query);
+    $response = $dept->delete($id);
 
     if ($response){
         header("Location: ../departments.php");
