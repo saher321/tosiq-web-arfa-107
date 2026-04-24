@@ -34,3 +34,15 @@ databases
     - collections(users, students, departments) > documents
 2. MySQL :: Relational
     - Tables(users, students, departments) > Rows,Columns
+
+--------------------------------------
+folder structure
+    - config > db.js
+    - modules
+        -> department
+            department.controller.js
+            department.model.js
+            department.route.js
+        -> student
+        -> user
+    - utils > common.js
