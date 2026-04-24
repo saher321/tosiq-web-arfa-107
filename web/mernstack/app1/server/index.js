@@ -8,25 +8,16 @@
 // nodemailer   => to send email to any user
 
 import express from 'express'
+import colorRouter from './routes/color.route.js';
 const app = express();
 const PORT = 5000;
+
+app.use('', colorRouter)
 
 app.get('/', (req, res) => {
     return res.send({
         status: true,
         message: "Server is running..."
-    })
-})
-
-const colors = [
-    {id: 982, code: "#33d"},
-    {id: 4392, code: "#41d"},
-    {id: 10323, code: "#63d"},
-]
-app.get('/house-colors', (req, res) => {
-    return res.send({
-        status: true,
-        houseColors: colors
     })
 })
 
