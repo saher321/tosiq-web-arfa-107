@@ -1,9 +1,11 @@
 import express from 'express'
 import notesRouter from './modules/notes/notes.route.js';
+import cors from 'cors'
 
-const app = express();
 
 const PORT= 5000
+const app = express();
+app.use(cors())
 
 app.use('', notesRouter)
 
