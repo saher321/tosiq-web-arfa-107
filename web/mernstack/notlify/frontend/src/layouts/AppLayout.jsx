@@ -15,8 +15,10 @@ const AppLayout = ({ children }) => {
       <TopBar />
 
       {/* Page Content */}
-      <main className="flex-1 ml-36 p-6 overflow-y-auto bg-white">
-        {children}
+      <main className="flex-1 p-6 overflow-y-auto bg-white">
+        <div className='max-w-6xl mx-auto'>
+          {children}
+        </div>
       </main>
     </div>
   </div>
