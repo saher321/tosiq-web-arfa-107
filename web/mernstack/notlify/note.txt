@@ -1,0 +1,5 @@
+notlify
+
+ - Authentication (login, signup, forgot password, reset password)
+ - notes (crud apis)
+ - ai room 
