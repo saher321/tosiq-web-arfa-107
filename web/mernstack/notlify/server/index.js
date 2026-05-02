@@ -1,9 +1,11 @@
 import express from 'express'
 import notesRouter from './modules/notes/notes.route.js';
 import cors from 'cors'
+import { connectDB } from './config/db.js';
 
 const PORT = 5000
 const app = express();
+app.use(express.json())
 app.use(cors())
 
 app.use('', notesRouter)
@@ -17,6 +19,8 @@ app.get('/', (req, res) => {
   })
 })
 
-app.listen( PORT, () => {
-  console.log(`Server is started at http://localhost:${PORT}`)
+connectDB().then( () => {
+  app.listen( PORT, () => {
+    console.log(`Server is started at http://localhost:${PORT}`)
+  })
 })
