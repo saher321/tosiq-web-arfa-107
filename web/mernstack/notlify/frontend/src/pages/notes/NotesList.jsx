@@ -2,14 +2,14 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import AppLayout from '../../layouts/AppLayout';
 import NoteItem from '../../components/notes/NoteItem';
+import { NOTES_URL } from '../../utils/api.js';
 
-const notes_url = 'http://localhost:5000/notes';
 const NotesList = () => {
   const [notes, setNotes] = useState([]);
 
   const getNotes = async () => {
     try {
-      const response = await axios.get(notes_url);
+      const response = await axios.get(NOTES_URL);
       if (response.data.status == true) {
         setNotes(response.data.notes);
       } else {

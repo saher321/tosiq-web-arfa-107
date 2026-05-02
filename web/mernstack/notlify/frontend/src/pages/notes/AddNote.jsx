@@ -3,16 +3,17 @@ import React, { useEffect, useState } from 'react';
 import AppLayout from '../../layouts/AppLayout';
 import NoteItem from '../../components/notes/NoteItem';
 import { GoArrowLeft } from 'react-icons/go';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import TextInput from '../../components/TextInput';
 import TextArea from '../../components/TextArea';
 import { useForm } from "react-hook-form"
+import { NOTE_CREATE_URL } from '../../utils/api.js';
+import toast from 'react-hot-toast';
 
-const notes_url = 'http://localhost:5000/notes';
 const AddNote = () => {
-  const [notes, setNotes] = useState([]);
   const [color, setColor] = useState('#FEC971');
   const { register, handleSubmit, reset } = useForm()
+  const navigate = useNavigate();
 
   const noteClrs = ['#FEC971', '#FE9B72', '#E4EF8F', '#B391F9', '#0AB8DE']
 
@@ -25,13 +26,22 @@ const AddNote = () => {
   const handleAddNote = async (data) => {
     try {
       const newData = {
+        color: color,
         title: data.title,
-        content: data.content,
-        color: color
+        content: data.content
       }
-      console.log(newData)
+
+      const response = await axios.post(NOTE_CREATE_URL, newData)
+      if (response.data.status == true) {
+        toast.success(response.data.message)
+        navigate('/')
+      } else {
+        toast.error(response.data.message)
+      }
+
     } catch (error) {
-      
+        toast.error("Network error")      
+        console.log("ERR: ", error)
     }
   }
   return (

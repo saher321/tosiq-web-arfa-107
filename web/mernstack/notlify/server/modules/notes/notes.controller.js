@@ -50,3 +50,26 @@ export const list = async (req, res) => {
     console.log('ERR:', error);
   }
 };
+
+export const add = async (req, res) => {
+  const { color, title, content } = req.body;
+  
+  try {
+
+    const createNote = await Note.create({color: color, title: title, content: content})
+    if (createNote) {
+      return res.send({
+        status: true,
+        message: "Data has been created."
+      })
+    } else {
+      return res.send({
+        status: false,
+        message: "Failed to save data"
+      })
+    }
+    
+  } catch (error) {
+    console.log("ERR:", error)
+  }
+}
