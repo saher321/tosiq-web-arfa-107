@@ -73,3 +73,24 @@ export const add = async (req, res) => {
     console.log("ERR:", error)
   }
 }
+
+
+export const deleteNote = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deleteNote = await Note.findByIdAndDelete({_id: id});
+    if (deleteNote) {
+      return res.send({
+        status: true,
+        message: "Data has been deleted."
+      })
+    } else {
+      return res.send({
+        status: false,
+        message: "Failed to delete data"
+      })
+    }
+  } catch (error) {
+    console.log("ERR:", error)
+  }
+}
