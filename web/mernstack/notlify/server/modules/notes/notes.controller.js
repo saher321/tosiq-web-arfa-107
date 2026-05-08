@@ -117,5 +117,23 @@ export const editNote = async (req, res) => {
 }
 
 export const updateNote = async (req, res) => {
-  
+  const { id, color, title, content } = req.body
+
+  try {
+    const note = await Note.findByIdAndUpdate({ _id: id }, {color, title, content}, { new: true })
+    if (!note){
+      return res.send({
+        status: false,
+        message: "Note not found!"
+      })
+    }
+
+    return res.send({
+      status: true,
+      message: "Note has been updated"
+    })
+
+  } catch (error) {
+    console.log(error)
+  }
 }

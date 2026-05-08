@@ -11,10 +11,12 @@ import { NOTE_EDIT_URL, NOTE_UPDATE_URL } from '../../utils/api.js';
 import toast from 'react-hot-toast';
 
 const EditNote = () => {
-  const [color, setColor] = useState('#FEC971');
+  const [ color, setColor ] = useState('#FEC971');
   const { register, handleSubmit, reset } = useForm()
   const navigate = useNavigate();
   const params = useParams()
+
+  const activeNoteCss = 'border border-2'
 
   const noteClrs = ['#FEC971', '#FE9B72', '#E4EF8F', '#B391F9', '#0AB8DE']
 
@@ -30,6 +32,7 @@ const EditNote = () => {
         const response = await axios.get(NOTE_EDIT_URL + `/${params.id}`)
         if (response.data.status == true) {
           console.log(response.data.note)
+          setColor(response.data?.note?.color)
           reset(response.data.note)
         } else {
           toast.error(response.data.message)
@@ -45,12 +48,13 @@ const EditNote = () => {
   const handleEditNote = async (data) => {
     try {
       const newData = {
+        id: params.id,
         color: color,
         title: data.title,
         content: data.content
       }
 
-      const response = await axios.post(NOTE_UPDATE_URL, newData)
+      const response = await axios.patch(NOTE_UPDATE_URL, newData)
       if (response.data.status == true) {
         toast.success(response.data.message)
         navigate('/')
@@ -78,7 +82,7 @@ const EditNote = () => {
               <div className='flex gap-3'>
                 {noteClrs.map((clr) => {
                   return (
-                    <button style={{backgroundColor: clr}} onClick={(e) => handleColor(e, clr)} className='p-1 rounded focus:border focus:scale-125'>{clr}</button>
+                    <button style={{backgroundColor: clr}} onClick={(e) => handleColor(e, clr)} className={`p-1 rounded focus:border focus:scale-125 ${color == clr && activeNoteCss}`}>{clr}</button>
                   )
                 })}
               </div>
