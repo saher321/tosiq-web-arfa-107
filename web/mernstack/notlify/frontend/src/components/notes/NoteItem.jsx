@@ -13,7 +13,7 @@ const NoteItem = ({ item, handleDelete }) => {
         <p>{item.content}</p>
       </div>
       <div className="flex items-center gap-3">
-        <Link className='p-2 shadow cursor-pointer bg-white rounded-full'>
+        <Link to={`/notes/edit/${item._id}`} className='p-2 shadow cursor-pointer bg-white rounded-full'>
           <GoPencil size={20} />
         </Link>
 

@@ -49,7 +49,7 @@ export const list = async (req, res) => {
   } catch (error) {
     console.log('ERR:', error);
   }
-};
+}
 
 export const add = async (req, res) => {
   const { color, title, content } = req.body;
@@ -74,7 +74,6 @@ export const add = async (req, res) => {
   }
 }
 
-
 export const deleteNote = async (req, res) => {
   const { id } = req.params;
   try {
@@ -93,4 +92,30 @@ export const deleteNote = async (req, res) => {
   } catch (error) {
     console.log("ERR:", error)
   }
+}
+
+export const editNote = async (req, res) => {
+  const { id } = req.params
+
+  try {
+    const note = await Note.findById({ _id: id })
+    if (!note){
+      return res.send({
+        status: false,
+        message: "Note not found!"
+      })
+    }
+
+    return res.send({
+      status: true,
+      note
+    })
+
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const updateNote = async (req, res) => {
+  
 }

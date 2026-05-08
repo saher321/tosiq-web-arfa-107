@@ -1,3 +1,9 @@
-export const NOTES_URL = "http://localhost:5000/notes"
-export const NOTE_CREATE_URL = "http://localhost:5000/notes/create"
-export const NOTE_DELETE_URL = "http://localhost:5000/notes/delete"
+const BASE_URL_API = 'http://localhost:5000'
+
+export const NOTES_URL          = BASE_URL_API + "/notes"
+export const NOTE_CREATE_URL    = BASE_URL_API + "/notes/create"
+
+export const NOTE_EDIT_URL      = BASE_URL_API + "/notes/edit"
+export const NOTE_UPDATE_URL    = BASE_URL_API + "/notes/update"
+
+export const NOTE_DELETE_URL    = BASE_URL_API + "/notes/delete"
