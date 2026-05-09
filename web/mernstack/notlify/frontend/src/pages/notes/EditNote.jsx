@@ -9,6 +9,7 @@ import TextArea from '../../components/TextArea.jsx';
 import { useForm } from "react-hook-form"
 import { NOTE_EDIT_URL, NOTE_UPDATE_URL } from '../../utils/api.js';
 import toast from 'react-hot-toast';
+import ActionButton from '../../components/ActionButton.jsx';
 
 const EditNote = () => {
   const [ color, setColor ] = useState('#FEC971');
@@ -108,7 +109,7 @@ const EditNote = () => {
             </div>
 
             <div>
-              <button className='bg-gray-900 text-white py-4 px-6 rounded-lg shadow font-bold'>Update note</button>
+              <ActionButton text="Update note" />
             </div>
           </form>
         </div>
