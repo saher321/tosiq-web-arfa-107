@@ -2,13 +2,39 @@ import React from 'react'
 import AuthLayout from '../../layouts/AuthLayout'
 import TextInput from '../../components/TextInput'
 import ActionButton from '../../components/ActionButton'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
+import { useForm } from 'react-hook-form'
+import axios from 'axios'
+import { SIGNUP_URL } from '../../utils/api.js'
+import toast from 'react-hot-toast'
+
 const Signup = () => {
+
+  const { register, handleSubmit, reset } = useForm()
+  const navigate = useNavigate()
+
+
+  const handleRegister = async (data) => {
+    try {
+      const response = await axios.post(SIGNUP_URL, data)
+
+      if (response.data.status == true){
+        toast.success(response.data.message)
+        reset()
+        navigate('/login')
+      } else {
+        toast.error(response.data.message)
+      }
+    } catch (error) {
+      console.log("ERR: ", error)
+    }
+  }
+
   return (
     <AuthLayout>
       <h1 className='text-3xl font-bold mb-2'>Welcome to Notlify</h1>
       <h1 className='text-xl mb-4'>New here!</h1>
-      <form>
+      <form onSubmit={handleSubmit(handleRegister)}>
         <div className='mb-4'>
           <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='username'>
             Full name
@@ -16,6 +42,7 @@ const Signup = () => {
           <TextInput
             id='fullname'
             type='text'
+            { ...register('fullName') }
             hint="Enter your full name"
             className="py-2 px-4 rounded-lg w-full border border-gray-300 bg-gray-100"
           />
@@ -28,6 +55,7 @@ const Signup = () => {
           <TextInput
             id='email'
             type='email'
+            { ...register('email') }
             hint="Enter your email"
             className="py-2 px-4 rounded-lg w-full border border-gray-300 bg-gray-100"
           />
@@ -40,6 +68,7 @@ const Signup = () => {
           <TextInput
             id='password'
             type='password'
+            { ...register('password') }
             hint="Enter your password"
             className="py-2 px-4 rounded-lg w-full border border-gray-300 bg-gray-100"
           />
