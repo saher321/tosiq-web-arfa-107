@@ -5,6 +5,8 @@ import AddNote from './pages/notes/AddNote'
 import EditNote from './pages/notes/EditNote'
 import Signup from './pages/auth/Signup'
 import Login from './pages/auth/Login'
+import ForgotPassword from './pages/auth/ForgotPassword'
+import ResetPassword from './pages/auth/ResetPassword'
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
       {/* Authentication Routes */}
       <Route path='/register' element={<Signup />}/>
       <Route path='/login' element={<Login />}/>
+      <Route path='/forgot-password' element={<ForgotPassword />}/>
+      <Route path='/reset-password' element={<ResetPassword />}/>
       <Route path='/' element={<NotesList />}/>
       <Route path='/' element={<NotesList />}/>
       
