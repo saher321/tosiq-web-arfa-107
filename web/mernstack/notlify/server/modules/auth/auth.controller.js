@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import User from './auth.model.js';
 import jwt from 'jsonwebtoken'
-import { generateOTP } from '../../utils/common.js';
+import { generateOTP, sendEmail } from '../../utils/common.js';
 
 export const register = async (req, res) => {
   const { fullName, email, password } = req.body;
@@ -100,7 +100,15 @@ export const login = async (req, res) => {
 };
 
 export const forgotPassword = async (req, res) => {
+
+  const { email } = req.body
+
   const otp = generateOTP()
+
+  const html = `<p>Your OTP code is: <b>${otp}</b></p>`
+
+  sendEmail(email, "Password Reset OTP", html)
+  
   console.log("OTP Code:", otp)
 };
 

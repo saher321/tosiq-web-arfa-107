@@ -1,5 +1,7 @@
 import { customAlphabet } from 'nanoid'
 import nodemailer from 'nodemailer'
+import dotenv from 'dotenv'
+dotenv.config()
 
 export const generateOTP = () => {
   const nanoid = customAlphabet('1234567890abcdef', 8)
@@ -11,17 +13,17 @@ export const sendEmail = async (to, subject, html) => {
   try {
     // Create a transporter using SMTP
     const transporter = nodemailer.createTransport({
-      host: "smtp.example.com",
+      host: "smtp.gmail.com",
       port: 587,
       secure: false,
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     const info = await transporter.sendMail({
-      from: '"Example Team" <team@example.com>', // sender address
+      from: `"Notlify Team" <${process.env.EMAIL_USER}>`, // sender address
       to: to,
       subject: subject, // subject line
       html: html, // HTML body

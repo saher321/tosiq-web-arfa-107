@@ -17,8 +17,6 @@ const ForgotPassword = () => {
       const response = await axios.post(FORGOT_PASSWORD_URL, data)
       console.log(response.data)
       // if (response.data.status == true) {
-        toast.success(response.data.message)
-        localStorage.setItem('usertoken', response.data.token)
         // navigate('/reset-password')
       // } else {
       //   toast.error(response.data.message)
