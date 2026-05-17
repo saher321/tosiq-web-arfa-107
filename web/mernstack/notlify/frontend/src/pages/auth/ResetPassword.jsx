@@ -14,6 +14,8 @@ const ResetPassword = () => {
 
   const handleResetPassword = async (data) => {
     try {
+      const email = localStorage.getItem('useremail')
+      data.email = email
       const response = await axios.post(RESET_PASSWORD_URL, data)
       console.log(response.data)
       if (response.data.status == true) {

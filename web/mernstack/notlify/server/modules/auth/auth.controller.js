@@ -103,13 +103,70 @@ export const forgotPassword = async (req, res) => {
 
   const { email } = req.body
 
-  const otp = generateOTP()
+  try {
+    const user = await User.findOne({ email })
+    if (!user) {
+      return res.send({
+        status: false,
+        message: "User not found with this email"
+      })
+    }
 
-  const html = `<p>Your OTP code is: <b>${otp}</b></p>`
+    const otp = generateOTP()
 
-  sendEmail(email, "Password Reset OTP", html)
+    user.otp = otp
+    user.isOtpVerified = false
+
+    await user.save()
+    
+    const html = `<p>Your OTP code is: <b>${otp}</b></p>`
+
+    sendEmail(email, "Password Reset OTP", html)
+
+    return res.send({
+      status: true,
+      message: "OTP sent to your email"
+    })
+
+  } catch (error) {
+    console.log("ERR:", error)
+  }
   
   console.log("OTP Code:", otp)
 };
 
-export const resetPassword = async (req, res) => {};
+export const resetPassword = async (req, res) => {
+  const { email, otp, newPassword } = req.body
+
+  try {
+    
+    const user = await User.findOne({ email })
+    if (!user) {
+      return res.send({
+        status: false,
+        message: "User not found with this email"
+      })
+    }
+    if (user.otp !== otp) {
+      return res.send({
+        status: false,
+        message: "Given OTP is invalid"
+      })
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    const encPass = await bcrypt.hash(newPassword, salt);
+    user.password = encPass
+    user.isOtpVerified = true
+    user.otp = null
+
+    await user.save()
+    return res.send({
+      status: true,
+      message: "Password reset successful"
+    })
+  } catch (error) {
+    console.log("ERR:", error)
+  }
+
+};

@@ -16,11 +16,13 @@ const ForgotPassword = () => {
     try {
       const response = await axios.post(FORGOT_PASSWORD_URL, data)
       console.log(response.data)
-      // if (response.data.status == true) {
-        // navigate('/reset-password')
-      // } else {
-      //   toast.error(response.data.message)
-      // }
+      if (response.data.status == true) {
+        toast.success(response.data.message)
+        localStorage.setItem('useremail', data.email)
+        navigate('/reset-password')
+      } else {
+        toast.error(response.data.message)
+      }
 
     } catch (error) {
       toast.error("Network error occurred")
